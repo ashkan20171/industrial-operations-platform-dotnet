@@ -1,0 +1,1 @@
+namespace AshkanIndustrialOperations.Models; public sealed class AlarmRule { public string Name {get;set;}=""; public string Metric {get;set;}=""; public double Warning {get;set;} public double Critical {get;set;} public bool Enabled {get;set;}=true; }

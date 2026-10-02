@@ -1,0 +1,1 @@
+namespace AshkanIndustrialOperations.Models; public sealed class MaintenancePlan { public string Asset {get;set;}=""; public string Task {get;set;}=""; public DateTime Due {get;set;} public string Owner {get;set;}=""; public string Status {get;set;}="Scheduled"; }

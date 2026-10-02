@@ -1,0 +1,1 @@
+using System.Windows.Controls; using AshkanIndustrialOperations.Services; namespace AshkanIndustrialOperations.Views; public partial class MaintenanceSchedulerView:UserControl { public MaintenanceSchedulerView(Stage6DataService data){InitializeComponent();GridData.ItemsSource=data.Plans;} }

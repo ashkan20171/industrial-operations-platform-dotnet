@@ -1,0 +1,21 @@
+<UserControl x:Class="AshkanIndustrialOperations.Views.HealthCenterView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <StackPanel Margin="26">
+      <Grid Margin="0,0,0,18">
+        <StackPanel><TextBlock Text="Operational Health Center" Style="{StaticResource PageTitle}"/><TextBlock Text="Explainable plant health checks across reliability, maintenance and inventory" Foreground="{StaticResource Muted}" Margin="0,5,0,0"/></StackPanel>
+        <Border HorizontalAlignment="Right" Background="#102C3A" CornerRadius="14" Padding="16,10"><StackPanel Orientation="Horizontal"><TextBlock Text="PLANT HEALTH  " Foreground="{StaticResource Muted}"/><TextBlock x:Name="HealthScoreText" Foreground="{StaticResource Accent2}" FontWeight="Bold" FontSize="18"/></StackPanel></Border>
+      </Grid>
+      <UniformGrid Columns="4" Margin="0,0,0,12">
+        <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="CRITICAL" Foreground="#FDA4AF"/><TextBlock x:Name="CriticalCount" Style="{StaticResource MetricStyle}"/><TextBlock Text="Immediate review" Foreground="{StaticResource Muted}"/></StackPanel></Border>
+        <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="HIGH RISK" Foreground="#FDE68A"/><TextBlock x:Name="HighCount" Style="{StaticResource MetricStyle}"/><TextBlock Text="Prioritize next" Foreground="{StaticResource Muted}"/></StackPanel></Border>
+        <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="LOW STOCK" Foreground="#93C5FD"/><TextBlock x:Name="StockCount" Style="{StaticResource MetricStyle}"/><TextBlock Text="At/below reorder" Foreground="{StaticResource Muted}"/></StackPanel></Border>
+        <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="DUE SOON" Foreground="#86EFAC"/><TextBlock x:Name="DueCount" Style="{StaticResource MetricStyle}"/><TextBlock Text="Within 3 days" Foreground="{StaticResource Muted}"/></StackPanel></Border>
+      </UniformGrid>
+      <Border Style="{StaticResource CardStyle}">
+        <StackPanel><Grid Margin="0,0,0,12"><StackPanel><TextBlock Text="Prioritized Findings" Style="{StaticResource SectionTitle}"/><TextBlock Text="Rules are transparent and deterministic — suitable for validation before adding an ML model." Foreground="{StaticResource Muted}"/></StackPanel><Button Content="Run health check" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Refresh_Click"/></Grid>
+          <DataGrid x:Name="FindingsGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="390"><DataGrid.Columns><DataGridTextColumn Header="SEVERITY" Binding="{Binding Severity}" Width="90"/><DataGridTextColumn Header="DOMAIN" Binding="{Binding Area}" Width="140"/><DataGridTextColumn Header="FINDING" Binding="{Binding Title}" Width="220"/><DataGridTextColumn Header="EVIDENCE" Binding="{Binding Detail}" Width="2*"/><DataGridTextColumn Header="RECOMMENDED ACTION" Binding="{Binding RecommendedAction}" Width="2*"/><DataGridTextColumn Header="RISK" Binding="{Binding Score,StringFormat={}{0}/100}" Width="80"/></DataGrid.Columns></DataGrid>
+        </StackPanel>
+      </Border>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

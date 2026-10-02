@@ -1,0 +1,1 @@
+using System.Windows.Controls; using AshkanIndustrialOperations.Services; namespace AshkanIndustrialOperations.Views; public partial class AuditView:UserControl { public AuditView(DemoDataService d){InitializeComponent();DataContext=d;} }

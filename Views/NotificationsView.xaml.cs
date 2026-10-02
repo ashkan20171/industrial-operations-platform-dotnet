@@ -1,0 +1,1 @@
+using System.Windows.Controls; using AshkanIndustrialOperations.Services; namespace AshkanIndustrialOperations.Views; public partial class NotificationsView:UserControl { public NotificationsView(DemoDataService data){InitializeComponent();Grid.ItemsSource=data.Notifications;} }

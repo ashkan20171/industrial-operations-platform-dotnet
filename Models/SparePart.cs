@@ -1,0 +1,1 @@
+namespace AshkanIndustrialOperations.Models; public sealed class SparePart { public string PartNo {get;set;}=""; public string Name {get;set;}=""; public int Stock {get;set;} public int ReorderPoint {get;set;} public string Location {get;set;}=""; public string Status => Stock<=ReorderPoint?"REORDER":"OK"; }
